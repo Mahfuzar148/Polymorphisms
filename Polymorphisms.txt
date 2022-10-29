@@ -1,0 +1,64 @@
+/*Super class*/
+public class Shape {
+    double area()
+    {
+        System.out.print("Area of Shape=");
+        return 0;
+    }
+}
+
+
+/*Sub-class Rectangle*/
+
+public class Rectangle extends Shape {
+    public double l,w;
+    public Rectangle(double l,double w) {
+        this.l=l;
+        this.w=w;
+    }
+    @Override
+    public double area()
+    {
+
+        System.out.print("Area of Rectangle=");
+        return (l*w);
+    }
+}
+
+/*Sub-class Triangle*/
+
+public class Triangle extends Shape {
+    double base;
+    double hight;
+
+    public Triangle(double base, double hight) {
+        this.base = base;
+        this.hight = hight;
+    }
+    @Override
+    public double area()
+    {
+        System.out.print("Area of Triangle=");
+        double v = .5 * base * hight;
+        return v;
+    }
+}
+
+/* Main class*/
+
+public class Test {
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Shape();
+        shapes[1] = new Rectangle(15,15);
+        shapes[2] = new Triangle(50,50);
+        for(int i=0;i<3;i++)
+        {
+            System.out.println(shapes[i].area());
+
+        }
+
+    }
+}
+
+
